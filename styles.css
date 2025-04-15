@@ -1,0 +1,172 @@
+:root{ 
+--fontparagraphs: 'Open Sans', sans-serif;
+
+/*colors*/
+
+--white: #fafafa;
+--black: #000000;
+--gray: #e1e1e1;
+--lightRed: rgb(246, 71, 71);
+--lightBlue: #95dcf8;
+--orange: rgb(151, 95, 55);
+--facebook-color: #1877F2;
+--discord-color: #5865F2;
+}
+
+body{
+    font-family: var(--fontparagraphs);
+    margin: 0;
+    background-color: var(--gray);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+ul{
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin-top: .5rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+button{
+    cursor: pointer;
+}
+
+nav{
+    background-color: var(--white);
+    padding: .5rem;
+}
+
+.nav-center{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-container{
+    align-items: center;
+    display: flex;
+    font-size: 25px;
+    gap: .1rem;
+}
+
+.logo-apellido{
+    color: var(--lightRed);
+}
+
+.links{
+    display: flex;
+    gap: 2rem;
+    font-size: 25px;
+    align-items: center;
+    
+}
+
+.links li{
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.links li:hover{
+    color: var(--lightRed);
+    font-size: 26px;
+}
+
+
+
+.social-icons{
+    display: flex;
+    gap: 2rem;
+    font-size: 25px;
+    align-items: center;
+}
+
+.social-icons li{
+    border-radius: .5rem;
+    transition: background-color 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.social-icons li:hover{
+    font-size: 32px;
+}
+
+
+.ti-brand-x:hover{
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: .5rem;
+}
+
+.ti-brand-facebook:hover{
+    background-color: var(--facebook-color);
+    color: var(--white);
+    border-radius: .5rem;
+}
+
+.ti-brand-discord:hover{
+    background-color: var(--discord-color);
+    color: var(--white);
+    border-radius: .5rem;
+}
+
+.nav-header{
+    display: flex;
+    justify-content: space-evenly
+}
+
+.nav-toggle{
+    width: 35px;
+    height: 35px;
+}
+
+@media (max-width: 768px) {
+    /*by default hide links*/
+    .links{
+        flex-direction: column;
+        height: 0;
+        align-items: flex-start; /* o center si quieres centrarlos */
+        padding-left: 3rem;
+        display: none;
+        transition: var(--transition);
+    }
+
+    .logo-container{
+        font-size: 18px;
+    }
+
+    .social-icons{
+        display: none;
+    }
+
+    .nav-center{
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start; /* o center */
+    }
+
+    .nav-toggle{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .nav-toggle{
+        display: none;
+    }
+}
+
+/*Toogle Class*/
+
+.show-links{
+    height: auto;
+    display: block;
+}
